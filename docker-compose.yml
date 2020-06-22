@@ -1,0 +1,14 @@
+version: "2"
+services:
+  fs-user:
+    image: asrsa/fs-task
+
+    ports:
+      - 8082:8082
+
+    volumes:
+      - ./api/target/api-1.0-SNAPSHOT.jar:/api/target/api-1.0-SNAPSHOT.jar
+
+    command:
+      java -agentlib:jdwp=transport=dt_socket,server=y,suspend=n,address=*:7999 -cp classes:dependency/* com.kumuluz.ee.EeApplication
+
