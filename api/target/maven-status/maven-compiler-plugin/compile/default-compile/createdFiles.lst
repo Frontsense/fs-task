@@ -1,0 +1,3 @@
+com\mag\frontsense\resources\TaskResource.class
+META-INF\services\javax.ws.rs.core.Application
+com\mag\frontsense\TaskApplication.class
