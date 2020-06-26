@@ -62,22 +62,28 @@
     </dependency>
 	
 	<dependency>
-			<groupId>com.kumuluz.ee</groupId>
-			<artifactId>kumuluzee-cdi-weld</artifactId>
-			<version>3.7.0</version>
-		</dependency>
-		
-		<dependency>
-			<groupId>org.mongodb</groupId>
-			<artifactId>mongo-java-driver</artifactId>
-			<version>3.12.0</version>
-		</dependency>
+		<groupId>com.kumuluz.ee</groupId>
+		<artifactId>kumuluzee-cdi-weld</artifactId>
+		<version>3.7.0</version>
+	</dependency>
 
-		<dependency>
-			<groupId>org.json</groupId>
-			<artifactId>json</artifactId>
-			<version>20190722</version>
-		</dependency>
+	<dependency>
+		<groupId>org.mongodb</groupId>
+		<artifactId>mongo-java-driver</artifactId>
+		<version>3.12.0</version>
+	</dependency>
+
+	<dependency>
+		<groupId>org.json</groupId>
+		<artifactId>json</artifactId>
+		<version>20190722</version>
+	</dependency>
+
+	<dependency>
+	  <groupId>com.kumuluz.ee.discovery</groupId>
+	  <artifactId>kumuluzee-discovery-etcd</artifactId>
+	  <version>1.1.1</version>
+	</dependency>
 	
   </dependencies>
 </project>

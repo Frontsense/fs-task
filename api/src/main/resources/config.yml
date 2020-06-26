@@ -3,3 +3,6 @@ kumuluzee:
   env:
     name: dev
   version: 1.0.0
+  discovery:
+    etcd:
+      hosts: http://127.0.0.1:2379
