@@ -4,11 +4,11 @@ services:
     image: asrsa/fs-task
 
     ports:
-      - 8082:8082
+      - 8082:8080
 
     volumes:
-      - ./api/target/api-1.0-SNAPSHOT.jar:/api/target/api-1.0-SNAPSHOT.jar
+      - .:/api/target/
 
     command:
-      java -agentlib:jdwp=transport=dt_socket,server=y,suspend=n,address=*:7999 -cp classes:dependency/* com.kumuluz.ee.EeApplication
+      java "-agentlib:jdwp=transport=dt_socket,server=y,suspend=n,address=*:7999" -cp classes:dependency/* com.kumuluz.ee.EeApplication
 
