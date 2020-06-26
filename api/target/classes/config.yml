@@ -5,4 +5,4 @@ kumuluzee:
   version: 1.0.0
   discovery:
     etcd:
-      hosts: http://127.0.0.1:2379
+      hosts: http://etcd:2379
