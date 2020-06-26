@@ -37,7 +37,7 @@ public class TaskResource {
     @Path("users")
     public Response getUsers() {
         WebTarget userService = userTarget.path("user/all");
-
+        System.out.println(userTarget.getUri().toString());
         Response response;
         try {
             response = userService.request().get();
