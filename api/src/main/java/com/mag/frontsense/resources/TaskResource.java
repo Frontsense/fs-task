@@ -3,6 +3,7 @@ package com.mag.frontsense.resources;
 import com.kumuluz.ee.discovery.annotations.DiscoverService;
 import com.mag.frontsense.beans.TaskBean;
 import com.mag.frontsense.models.Task;
+import org.glassfish.jersey.client.JerseyWebTarget;
 import org.json.JSONObject;
 
 import javax.enterprise.context.ApplicationScoped;
@@ -37,7 +38,7 @@ public class TaskResource {
     @Path("users")
     public Response getUsers() {
         WebTarget userService = userTarget.path("user/all");
-        System.out.println(userTarget.getUri().toString());
+
         Response response;
         try {
             response = userService.request().get();
