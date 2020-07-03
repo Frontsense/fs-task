@@ -43,6 +43,7 @@ public class TaskResource {
         try {
             response = userService.request().get();
         } catch (ProcessingException e) {
+            System.out.println(e);
             return Response.status(408).build();
         }
 
