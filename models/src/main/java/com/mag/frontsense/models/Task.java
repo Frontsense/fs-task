@@ -5,15 +5,15 @@ public class Task {
     private String desc;
     private String sensorType;
     private double lat;
-    private double lang;
+    private double lng;
     private double radius;
 
-    Task(int taskId, String desc, String sensorType, double lat, double lang, double radius) {
+    Task(int taskId, String desc, String sensorType, double lat, double lng, double radius) {
         this.taskId = taskId;
         this.desc = desc;
         this.sensorType = sensorType;
         this.lat = lat;
-        this.lang = lang;
+        this.lng = lng;
         this.radius = radius;
     }
 
@@ -49,12 +49,12 @@ public class Task {
         this.lat = lat;
     }
 
-    public double getLang() {
-        return lang;
+    public double getLng() {
+        return lng;
     }
 
-    public void setLang(double lang) {
-        this.lang = lang;
+    public void setLng(double lng) {
+        this.lng = lng;
     }
 
     public double getRadius() {
