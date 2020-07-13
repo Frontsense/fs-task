@@ -36,7 +36,7 @@ public class MongoTask {
                     curr.getString("desc"),
                     curr.getString("sensorType"),
                     curr.getDouble("lat"),
-                    curr.getDouble("lang"),
+                    curr.getDouble("lng"),
                     curr.getDouble("radius")
             );
 
