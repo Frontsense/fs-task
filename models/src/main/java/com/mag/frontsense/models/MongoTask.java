@@ -5,7 +5,9 @@ import com.mongodb.MongoClientURI;
 import com.mongodb.MongoClient;
 import com.mongodb.client.MongoCollection;
 import com.mongodb.client.MongoDatabase;
+import com.mongodb.client.model.Filters;
 import org.bson.Document;
+import org.bson.conversions.Bson;
 import org.json.JSONObject;
 
 import java.util.ArrayList;
@@ -44,6 +46,29 @@ public class MongoTask {
         }
 
         return results;
+    }
+
+    public Task getTaskById(Integer taskId) {
+        MongoClient client = connectDB();
+        MongoDatabase db = client.getDatabase(DBName);
+        MongoCollection<Document> taskCollection = db.getCollection(DBCollection);
+
+        Task result = null;
+
+        Bson filterTasKId = Filters.eq("taskId", taskId);
+        Document resultFilter = taskCollection.find(filterTasKId).first();
+
+        if (resultFilter != null) {
+            result = new Task(resultFilter.getInteger("taskId"),
+                    resultFilter.getString("desc"),
+                    resultFilter.getString("sensorType"),
+                    resultFilter.getDouble("lat"),
+                    resultFilter.getDouble("lng"),
+                    resultFilter.getDouble("radius")
+            );
+        }
+
+        return result;
     }
 
     public void insertTask(JSONObject jsonTask) {

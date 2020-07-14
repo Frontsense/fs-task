@@ -74,6 +74,19 @@ public class TaskResource {
                 .build();
     }
 
+    @GET
+    @Path("/{taskId}")
+    public Response getTaskById(@PathParam("taskId") Integer taskId) {
+        Task task = taskBean.getTask(taskId);
+
+        return Response.ok(task)
+                .header("Access-Control-Allow-Origin", "*")
+                .header("Access-Control-Allow-Credentials", "true")
+                .header("Access-Control-Allow-Methods", "GET, POST, OPTIONS")
+                .header("Access-Control-Allow-Headers", "Origin, Content-Type, Accept")
+                .build();
+    }
+
     @OPTIONS
     @Path("/insert")
     public Response optionsInsert() {

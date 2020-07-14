@@ -30,6 +30,12 @@ public class TaskBean {
         return mt.getAllTasks();
     }
 
+    public Task getTask(Integer taskId) {
+        MongoTask mt = new MongoTask();
+
+        return mt.getTaskById(taskId);
+    }
+
     public void insertTask(JSONObject jsonTask) {
         MongoTask mt = new MongoTask();
 
